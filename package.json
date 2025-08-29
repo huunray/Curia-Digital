@@ -1,6 +1,7 @@
 {
   "devDependencies": {
-    "@stackbit/cms-git": "^1.0.35",
+    "@stackbit/cms-contentful": "^1.0.33",
+    "@stackbit/cms-git": "^0.0.14",
     "@stackbit/types": "^2.1.14"
   }
 }
