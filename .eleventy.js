@@ -1,3 +1,6 @@
+// .eleventy.js
+require("dotenv").config();
+
 module.exports = function (eleventyConfig) {
   // Copy Webflow asset folders straight through
   eleventyConfig.addPassthroughCopy({ "src/css": "css" });

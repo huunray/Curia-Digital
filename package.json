@@ -9,7 +9,8 @@
   },
   "dependencies": {
     "@11ty/eleventy": "^3.0.0",
-    "contentful": "^10.6.18"
+    "contentful": "^10.6.18",
+    "dotenv": "^17.2.1"
   },
   "devDependencies": {
     "netlify-cli": "^17.0.0"
