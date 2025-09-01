@@ -1,0 +1,35 @@
+---
+layout: none
+pagination:
+  data: posts
+  size: 1
+  alias: post
+  addAllPagesToCollections: true
+permalink: "/blog/{{ post.slug }}/index.html"
+---
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>{{ post.title }}</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="/css/your-webflow.css">
+</head>
+<body>
+  <article class="container">
+    <h1>{{ post.title }}</h1>
+    <p><small>{{ post.date | date: "%b %d, %Y" }}</small></p>
+    {% if post.image %}<img src="{{ post.image }}" alt="{{ post.title }}" style="max-width:100%">{% endif %}
+
+    <div id="post-body"></div>
+  </article>
+
+  <!-- Render Contentful Rich Text after load (simple & safe) -->
+  <script src="https://unpkg.com/@contentful/rich-text-html-renderer@16/dist/rich-text-html-renderer.umd.js"></script>
+  <script>
+    const rich = window.richTextHtmlRenderer;
+    const doc = {{ post.body | dump | safe }};
+    document.getElementById('post-body').innerHTML = doc ? rich.documentToHtmlString(doc) : "";
+  </script>
+</body>
+</html>

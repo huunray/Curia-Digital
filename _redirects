@@ -1,0 +1,7 @@
+/blog                /blog/index.html      200
+/blog/               /blog/index.html      200
+# Static post pages exist after build at /blog/<slug>/index.html
+
+# Draft preview endpoint:
+# Visit /preview/blog/my-slug to fetch draft content from Contentful Preview API
+/preview/blog/:slug  /.netlify/functions/contentful-preview?slug=:slug   200

@@ -1,0 +1,33 @@
+---
+layout: none
+pagination:
+  data: posts
+  size: 1000
+  alias: items
+permalink: "/blog/index.html"
+---
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <!-- include your Webflow CSS links if needed, or they’re already in src/index.html -->
+  <link rel="stylesheet" href="/css/your-webflow.css">
+</head>
+<body>
+  <main class="container">
+    <h1>Blog</h1>
+    <div class="grid">
+      {% for p in items %}
+        <a class="card" href="/blog/{{ p.slug }}/">
+          {% if p.image %}<img src="{{ p.image }}" alt="{{ p.title }}" />{% endif %}
+          <h2>{{ p.title }}</h2>
+          <p>{{ p.excerpt }}</p>
+          <small>{{ p.date | date: "%b %d, %Y" }}</small>
+        </a>
+      {% endfor %}
+    </div>
+  </main>
+</body>
+</html>
