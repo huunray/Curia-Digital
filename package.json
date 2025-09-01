@@ -1,7 +1,17 @@
 {
+  "name": "curia-digital",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "netlify dev",
+    "build": "eleventy",
+    "start": "netlify dev"
+  },
+  "dependencies": {
+    "@11ty/eleventy": "^3.0.0",
+    "contentful": "^10.6.18"
+  },
   "devDependencies": {
-    "@stackbit/cms-contentful": "^1.0.33",
-    "@stackbit/cms-git": "^0.0.14",
-    "@stackbit/types": "^2.1.14"
+    "netlify-cli": "^17.0.0"
   }
 }
